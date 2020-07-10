@@ -17,6 +17,9 @@ span {
     font-size: small;
     line-height: 18px;
 }
+input:focus{
+    outline: none;
+}
 #header-items {
     width: 1000px;
 }
@@ -132,4 +135,7 @@ span {
     width: 30px;
     clip-path: circle(15px);
     margin-right: 10px;
+}
+.pointer {
+    cursor: pointer;
 }
