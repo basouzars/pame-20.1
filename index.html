@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="index.css">
     <title>PAME 2020.1</title>
 </head>
 <body>
-    <header>
-        <div id="header-items">
+    <header class="flex justify-center">
+        <div id="header-items" class="flex justify-space-btwn align-center">
             <div id="logo">
                 <img src="instagram_logo.png" alt="">
             </div>
             <div id="search-bar">
                 <input id="search" class="border" type="text" placeholder="Pesquisar">
             </div>
-            <div id="menu">
+            <div id="menu" class="flex justify-space-btwn align-center">
                 <svg class="icon icon-stroke" enable-background="new 0 0 511.995 511.995" height="512" viewBox="0 0 511.995 511.995" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m507.308 236.641-198.98-198.99c-28.86-28.85-75.8-28.85-104.66 0l-198.98 198.99c-6.25 6.25-6.25 16.38 0 22.63 6.24 6.25 16.38 6.25 22.62 0l12.69-12.69v203.4c0 25.405 20.595 46 46 46h80c5.523 0 10-4.477 10-10v-148c0-27.614 22.386-50 50-50h60c27.614 0 50 22.386 50 50v148c0 5.523 4.477 10 10 10h80c25.405 0 46-20.595 46-46v-203.4l12.69 12.69c3.12 3.12 7.22 4.69 11.31 4.69s8.19-1.57 11.31-4.69c6.25-6.25 6.25-16.38 0-22.63z"/></g></svg>
                 <svg class="icon" version="1.1" id="origami" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 162.412 162.412" style="enable-background:new 0 0 162.412 162.412;" xml:space="preserve"><g><path style="fill:#010002;" d="M162.412,81.206L0,0.534L46.106,80.58c-0.042,0.209-0.125,0.406-0.125,0.627 c0,0.221,0.084,0.418,0.125,0.627L0,161.878L162.412,81.206z M51.637,84.19h91.353L15.025,147.755L51.637,84.19z M142.99,78.223 H51.637L15.025,14.658L142.99,78.223z"/></g></svg>
                 <svg class="icon" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m304 304-96-96" fill="none"/><path d="m303 319c-4.095 0-8.189-1.562-11.313-4.687l-94-94c-6.249-6.248-6.249-16.379 0-22.627 6.248-6.249 16.379-6.249 22.627 0l94 94c6.249 6.248 6.249 16.379 0 22.627-3.125 3.125-7.219 4.687-11.314 4.687z"/><path d="m144.003 384c-4.167 0-8.258-1.628-11.317-4.687-4.525-4.526-5.919-11.313-3.542-17.256l64-160c1.626-4.065 4.848-7.287 8.913-8.913l160-64c5.944-2.377 12.73-.983 17.256 3.542 4.525 4.526 5.919 11.313 3.542 17.256l-64 160c-1.626 4.065-4.848 7.287-8.913 8.913l-160 64c-1.926.771-3.941 1.145-5.939 1.145zm76.306-163.691-47.588 118.97 118.97-47.588 47.588-118.97z"/><path d="m256 512c-68.38 0-132.667-26.628-181.02-74.98s-74.98-112.64-74.98-181.02 26.628-132.667 74.98-181.02 112.64-74.98 181.02-74.98 132.667 26.628 181.02 74.98 74.98 112.64 74.98 181.02-26.628 132.667-74.98 181.02-112.64 74.98-181.02 74.98zm0-480c-123.514 0-224 100.486-224 224s100.486 224 224 224 224-100.486 224-224-100.486-224-224-224z"/></g></svg>
@@ -24,35 +24,35 @@
             </div>
         </div>
     </header>
-    <div id="page-content">
-        <div id="post">
+    <div class="flex justify-center">
+        <div id="post" class="flex">
             <div id="picture">
                 <img src="foto.png" alt="">
             </div>
-            <div id="content">
-                <div id="author">
-                    <div id="author-profile">
-                        <div id="profile">
+            <div id="content" class="flex justify-space-btwn column">
+                <div>
+                    <div id="author" class="flex justify-space-btwn">
+                        <div class="flex align-center">
                             <img class="user-img story-on" src="user_profile.JPG" alt="">
                             <span><b>pame2020.1 - Seguindo</b></span>
                         </div>
                         <svg id="more-menu" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve"><g><g><circle cx="42.667" cy="213.333" r="42.667"/></g></g><g><g><circle cx="213.333" cy="213.333" r="42.667"/></g></g><g><g><circle cx="384" cy="213.333" r="42.667"/></g></g></svg>
                     </div>
-                    <div id="description" class="border">
+                    <div id="description" class="border flex align-top">
                         <img class="user-img story-on" src="user_profile.JPG" alt="">
                         <span><b>pame2020.1</b> "Nossa liberdade de existir e ocupar espaços na sociedade é um direito fundamental que nunca deveria ser questionado. Juntos e unidos podemos conquistar cada vez mais igualdade."<br>- Guilherme Zamarioli Youssef</span>
                     </div>
                 </div>
                 <div>
-                    <div id="viewer" class="border">
-                        <div id="actions">
+                    <div id="viewer" class="border flex justify-space-btwn">
+                        <div id="actions" class="flex justify-space-btwn">
                             <svg id="red-heart" class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.5 477.5" style="enable-background:new 0 0 477.5 477.5;" xml:space="preserve"><path d="M438.5,58.6c-24.7-26.5-59.3-41.7-95.6-41.7c-36.3,0-70.9,15.1-95.7,41.7l-8.4,8.9l-8.4-8.9C181.3,5.8,98.7,2.7,45.8,51.8 c-2.3,2.2-4.6,4.4-6.8,6.8c-52.1,56.2-52.1,143,0,199.1l187.4,197.6c6.5,6.8,17.3,7.1,24.1,0.7c0.2-0.2,0.4-0.4,0.7-0.7l187.3-197.6 C490.6,201.6,490.6,114.8,438.5,58.6z"/></svg>
                             <svg id="comment-icon" class="icon" enable-background="new 0 0 511.072 511.072" viewBox="0 0 511.072 511.072" width="512" xmlns="http://www.w3.org/2000/svg"><g id="Speech_Bubble_48_"><g><path d="m74.39 480.536h-36.213l25.607-25.607c13.807-13.807 22.429-31.765 24.747-51.246-36.029-23.644-62.375-54.751-76.478-90.425-14.093-35.647-15.864-74.888-5.121-113.482 12.89-46.309 43.123-88.518 85.128-118.853 45.646-32.963 102.47-50.387 164.33-50.387 77.927 0 143.611 22.389 189.948 64.745 41.744 38.159 64.734 89.63 64.734 144.933 0 26.868-5.471 53.011-16.26 77.703-11.165 25.551-27.514 48.302-48.593 67.619-46.399 42.523-112.042 65-189.83 65-28.877 0-59.01-3.855-85.913-10.929-25.465 26.123-59.972 40.929-96.086 40.929zm182-420c-124.039 0-200.15 73.973-220.557 147.285-19.284 69.28 9.143 134.743 76.043 175.115l7.475 4.511-.23 8.727c-.456 17.274-4.574 33.912-11.945 48.952 17.949-6.073 34.236-17.083 46.99-32.151l6.342-7.493 9.405 2.813c26.393 7.894 57.104 12.241 86.477 12.241 154.372 0 224.682-93.473 224.682-180.322 0-46.776-19.524-90.384-54.976-122.79-40.713-37.216-99.397-56.888-169.706-56.888z"/></g></g></svg>
                             <svg class="icon" version="1.1" id="origami" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 162.412 162.412" style="enable-background:new 0 0 162.412 162.412;" xml:space="preserve"><g><path style="fill:#010002;" d="M162.412,81.206L0,0.534L46.106,80.58c-0.042,0.209-0.125,0.406-0.125,0.627 c0,0.221,0.084,0.418,0.125,0.627L0,161.878L162.412,81.206z M51.637,84.19h91.353L15.025,147.755L51.637,84.19z M142.99,78.223 H51.637L15.025,14.658L142.99,78.223z"/></g></svg>
                         </div>
                         <svg id="save" class="icon" version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve"><style type="text/css">	.st0{display:none;}</style><g id="Padding__x26__Artboard" class="st0"></g><path d="M39,47.5L25,26.8c-0.5-0.7-1.5-0.7-1.9,0L9,47.5c-0.6,1-2.1,0.5-2.1-0.7V1.2C6.8,0.5,7.4,0,8,0h32c0.6,0,1.2,0.5,1.2,1.2	v45.7C41.2,48,39.7,48.4,39,47.5z"/></svg>
                     </div>
-                    <div id="comment-bar" class="border">
+                    <div id="comment-bar" class="border flex justify-space-btwn align-center">
                         <input id="comment" type="text" placeholder="Adicione um comentário...">
                         <span id="publish">Publicar</span>
                     </div>
@@ -61,163 +61,4 @@
         </div>
     </div>
 </body>
-
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    body {
-        background-color: rgb(238, 238, 238);
-    }
-    header {
-        width: 100%;
-        height: 50px;
-        background: #fff;
-        display: flex;
-        justify-content: center;
-    }
-    img {
-        width: 100%;
-    }
-    #header-items {
-        width: 1000px;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    #logo {
-        width: 100px;
-        margin-top: 10px;
-    }
-    #search-bar {
-        width: 150px;
-    }
-    #search {
-        height: 20px;
-        background: #ececec;
-        border-color: #999;
-        border-radius: 5px;
-        text-align: center;
-    }
-    #menu {
-        width: 210px;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-    }
-    .icon {
-        width: 24px;
-    }
-    .icon-stroke {
-        fill: none;
-        stroke: #000;
-        stroke-width: 20px;
-    }
-    #origami {
-        transform: rotate(-25deg);
-    }
-    #save {
-        fill: none;
-        stroke: #000;
-        stroke-width: 2px;
-    }
-    .profile-img {
-        clip-path: circle(12px);
-    }
-    #page-content {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    #post {
-        margin-top: 20px;
-        display: flex;
-        width: 1000px;
-        height: 700px;
-        background: #999;
-        justify-content: center;
-    }
-    #picture {
-        width: 700px;
-        height: 100%;
-    }
-    #content {
-        width: 300px;
-        background: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        border-style: solid;
-        border-width: 1px 1px 1px 0px;
-        border-color: #ddd;
-    }
-    #author-profile {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px;
-    }
-    #profile {
-        display: flex;
-        align-items: center;
-    }
-    .user-img {
-        width: 30px;
-        clip-path: circle(15px);
-        margin-right: 10px;
-    }
-    span {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: small;
-        line-height: 18px;
-    }
-    #more-menu {
-        width: 15px;
-    }
-    #description {
-        height: 400px;
-        padding: 20px;
-        display: flex;
-        align-items: flex-start;
-    }
-    #viewer {
-        padding: 10px 20px;
-        height: 25px;
-        display: flex;
-        justify-content: space-between;
-    }
-    #actions {
-        width: 100px;
-        display: flex;
-        justify-content: space-between;
-    }
-    #red-heart {
-        fill: #f55;
-    }
-    #comment-icon {
-        transform: scale(-1,1);
-    }
-    #comment-bar {
-        padding: 10px 20px;
-        height: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    #comment {
-        border: none;
-    }
-    #publish {
-        color: rgb(159, 236, 248);
-    }
-    .border {
-        border-top-style: solid;
-        border-top-width: 1px;
-        border-top-color: #ddd;
-    }
-</style>
-
 </html>
