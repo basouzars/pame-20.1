@@ -1,5 +1,12 @@
-<?xml version="1.0" ?><svg style="enable-background:new 0 0 48 48;" version="1.1" viewBox="0 0 48 48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<style type="text/css">
 	.st0{display:none;}
-	.st1{fill:none;stroke:#303030;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:#303030;}
-</style><g class="st0" id="Padding__x26__Artboard"/><g id="Icons"><g><path class="st1" d="M30.37337,33.9599l-5.96166-8.79194c-0.19733-0.29102-0.62609-0.29102-0.82342,0l-5.96166,8.79194    c-0.27508,0.40568-0.90915,0.21098-0.90915-0.27917V14.31835c0-0.27473,0.22271-0.49744,0.49744-0.49744h13.57016    c0.27473,0,0.49744,0.22271,0.49744,0.49744v19.36238C31.28252,34.17088,30.64845,34.36558,30.37337,33.9599z"/><g><line class="st1" x1="19.16389" x2="24.19888" y1="16.12722" y2="16.12722"/><line class="st1" x1="25.54154" x2="26.5905" y1="16.12722" y2="16.12722"/></g><path class="st1" d="M30.37337,33.9599l-5.96166-8.79194c-0.19733-0.29102-0.62609-0.29102-0.82342,0l-5.96166,8.79194    c-0.27508,0.40568-0.90915,0.21098-0.90915-0.27917V14.31835c0-0.27473,0.22271-0.49744,0.49744-0.49744h13.57016    c0.27473,0,0.49744,0.22271,0.49744,0.49744v19.36238C31.28252,34.17088,30.64845,34.36558,30.37337,33.9599z"/></g></g></svg>
+</style>
+<g id="Padding__x26__Artboard" class="st0">
+</g>
+<path d="M39,47.5L25,26.8c-0.5-0.7-1.5-0.7-1.9,0L9,47.5c-0.6,1-2.1,0.5-2.1-0.7V1.2C6.8,0.5,7.4,0,8,0h32c0.6,0,1.2,0.5,1.2,1.2
+	v45.7C41.2,48,39.7,48.4,39,47.5z"/>
+</svg>
