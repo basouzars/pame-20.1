@@ -42,6 +42,7 @@ input:focus{
 }
 #origami {
     transform: rotate(-25deg);
+    margin-top: -7px;
 }
 #save {
     fill: none;
