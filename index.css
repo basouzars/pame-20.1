@@ -12,6 +12,11 @@ header {
 img {
     width: 100%;
 }
+span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    line-height: 18px;
+}
 #header-items {
     width: 1000px;
 }
@@ -32,14 +37,6 @@ img {
 #menu {
     width: 210px;
 }
-.icon {
-    width: 24px;
-}
-.icon-stroke {
-    fill: none;
-    stroke: #000;
-    stroke-width: 20px;
-}
 #origami {
     transform: rotate(-25deg);
 }
@@ -47,9 +44,6 @@ img {
     fill: none;
     stroke: #000;
     stroke-width: 2px;
-}
-.profile-img {
-    clip-path: circle(12px);
 }
 #post {
     margin-top: 20px;
@@ -69,16 +63,6 @@ img {
 }
 #author {
     padding: 20px;
-}
-.user-img {
-    width: 30px;
-    clip-path: circle(15px);
-    margin-right: 10px;
-}
-span {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: small;
-    line-height: 18px;
 }
 #more-menu {
     width: 15px;
@@ -128,8 +112,24 @@ span {
 .column {
     flex-direction: column;
 }
+.icon {
+    width: 24px;
+}
+.icon-stroke {
+    fill: none;
+    stroke: #000;
+    stroke-width: 20px;
+}
 .border {
     border-top-style: solid;
     border-top-width: 1px;
     border-top-color: #ddd;
+}
+.profile-img {
+    clip-path: circle(12px);
+}
+.user-img {
+    width: 30px;
+    clip-path: circle(15px);
+    margin-right: 10px;
 }
