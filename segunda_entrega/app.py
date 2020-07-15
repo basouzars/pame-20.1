@@ -74,27 +74,32 @@ def create():
     return user.json(), 200
 
 
-@app.route('/users', methods=['DELETE'])
-def delete_all():
+@app.route('/users/<int:id>', methods=['GET'])
+def user_detail(id):
+    if request.method == 'GET':
+        user = User.query.get_or_404(id)
+        return user.json(), 200
+
+
+@app.route('/users/<int:id>', methods=['DELETE'])
+def delete(id):
     try:
-        users = User.query.all()
-        for user in users:
-            db.session.delete(user)
+        user = User.query.get_or_404(id)
+        db.session.delete(user)
         db.session.commit()
     except:
-        return {'error': 'Erro ao deletar usuarios'}, 400
+        return {'error': 'Erro ao deletar usuário'}, 400
 
     return {'ok': True}, 200
 
 
-@app.route('/users', methods=['PUT'])
-def replace():
+@app.route('/users/<int:id>', methods=['PUT'])
+def replace(id):
     data = request.json
 
-    id = data.get('id')
     name, email, age = get_user_info(data)
 
-    if not name or not email or not id:
+    if not name or not email:
         return {'error': 'Dados insuficientes'}, 400
 
     user = User.query.get_or_404(id)
@@ -104,17 +109,13 @@ def replace():
     
     db.session.add(user)
     db.session.commit()
+
+    return user.json(), 200
     
-    return {'ok': True}, 200
 
-
-@app.route('/users', methods=['PATCH'])
-def update():
+@app.route('/users/<int:id>', methods=['PATCH'])
+def update(id):
     data = request.json
-
-    id = data.get('id')
-    if not id:
-        return {'error': 'Usuário não informado'}, 400
 
     user = User.query.get_or_404(id)
 
@@ -130,14 +131,7 @@ def update():
     db.session.add(user)
     db.session.commit()
 
-    return {'ok': True}, 200
-
-
-@app.route('/users/<int:id>', methods=['GET'])
-def user_detail(id):
-    if request.method == 'GET':
-        user = User.query.get_or_404(id)
-        return user.json(), 200
+    return user.json(), 200
 
 
 if __name__ == '__main__':
