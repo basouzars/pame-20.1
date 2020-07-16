@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import exists
 
 
 app = Flask(__name__)
@@ -18,6 +19,10 @@ def get_user_info(data):
     email = data.get('email')
     age = data.get('age')
     return name, email, age
+
+
+def validate_email(email):
+    return not db.session.query(exists().where(User.email==email)).scalar()
 
 
 class User(db.Model):
@@ -64,14 +69,17 @@ def create():
     name, email, age = get_user_info(data)
 
     if not name or not email:
-        return {'error': 'Dados insuficientes'}, 400
+        return {'error': 'Dados insuficientes'}, 406
+
+    if not validate_email(email):
+        return {'error': 'Email já cadastrado'}, 406
 
     user = User(name=name, email=email, age=age)
 
     db.session.add(user)
     db.session.commit()
 
-    return user.json(), 200
+    return user.json(), 201
 
 
 @app.route('/users/<int:id>', methods=['GET'])
@@ -90,7 +98,7 @@ def delete(id):
     except:
         return {'error': 'Erro ao deletar usuário'}, 400
 
-    return {'ok': True}, 200
+    return {'ok': 'Usuário deletado'}, 200
 
 
 @app.route('/users/<int:id>', methods=['PUT'])
@@ -100,7 +108,10 @@ def replace(id):
     name, email, age = get_user_info(data)
 
     if not name or not email:
-        return {'error': 'Dados insuficientes'}, 400
+        return {'error': 'Dados insuficientes'}, 406
+
+    if not validate_email(email):
+        return {'error': 'Email já cadastrado'}, 406
 
     user = User.query.get_or_404(id)
     user.name = name
@@ -123,10 +134,13 @@ def update(id):
 
     if name:
         user.name = name
-    if email:
-        user.email = email
     if age:
         user.age = age
+    if email:
+        if validate_email(email):
+            user.email = email
+        else:
+            return {'error': 'Email já cadastrado'}, 406
 
     db.session.add(user)
     db.session.commit()
