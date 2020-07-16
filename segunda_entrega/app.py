@@ -91,12 +91,9 @@ def user_detail(id):
 
 @app.route('/users/<int:id>', methods=['DELETE'])
 def delete(id):
-    try:
-        user = User.query.get_or_404(id)
-        db.session.delete(user)
-        db.session.commit()
-    except:
-        return {'error': 'Erro ao deletar usuário'}, 400
+    user = User.query.get_or_404(id)
+    db.session.delete(user)
+    db.session.commit()
 
     return {'ok': 'Usuário deletado'}, 200
 
