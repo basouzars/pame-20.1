@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
+import enums
 
 class BaseModel(models.Model):
     class Meta:
@@ -40,6 +40,19 @@ class Post(BaseModel):
     author = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name="autor", related_name="posts_author")
     description = models.TextField("descrição", null=False, blank=False)
     like = models.ManyToManyField(Profile, blank=True, verbose_name="curtida", related_name="posts_like")
+
+
+class Product(BaseModel):
+    class Meta:
+        verbose_name = "produto"
+        verbose_name_plural = "produtos"
+
+    post = models.OneToOneField(Post, on_delete=models.CASCADE, primary_key=True)
+    price = models.DecimalField("preço", max_digits=13, decimal_places=2, default=0)
+    free_ship = models.BooleanField("frete grátis", default=False)
+    installment = models.PositiveSmallIntegerField("parcelas", default=0)
+    stock = models.PositiveSmallIntegerField("estoque", default=0)
+    category = models.CharField("categoria", max_length=20, choices=enums.ProductCategories)
 
 
 class Comment(BaseModel):
