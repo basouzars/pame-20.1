@@ -21,7 +21,6 @@ def show_one(id):
     return post.json(), 200
 
 
-
 @post_api.route('/feed', methods=['POST'])
 @jwt_required
 def create():

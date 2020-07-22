@@ -34,6 +34,7 @@ def create(id):
     return comment.json(), 201
 
 
+
 @comment_api.route('/feed/<int:id_post>/<int:id_comment>', methods=['DELETE'])
 @jwt_required
 def delete(id_post,id_comment):
