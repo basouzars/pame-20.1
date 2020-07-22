@@ -22,7 +22,6 @@ class User(db.Model):
     password_hash = db.Column(db.String(128), nullable=False)
     age = db.Column(db.Integer, default=0)
     activated = db.Column(db.Boolean, default=False)
-    post = relationship("Post")
     post_likes = relationship("Post", secondary=postlike, backref="users")
     comment_likes = relationship("Comment", secondary=commentlike, backref="users")
 
@@ -32,7 +31,6 @@ class User(db.Model):
             "name": self.name,
             "email": self.email,
             "age": self.age,
-            "post": self.post,
         }
         return user__json
 
@@ -41,8 +39,8 @@ class Post(db.Model):
     __tablename__ = 'posts'
     id = db.Column(db.Integer, primary_key=True)
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    author = relationship("User",backref="posts")
     description = db.Column(db.String(280), nullable=False)
-    comments = relationship("Comment", backref="posts")
     products = relationship("Product", uselist=False, backref="posts")
 
     def json(self):
@@ -63,8 +61,10 @@ class Product(db.Model):
 class Comment(db.Model):
     __tablename__ = 'comments'
     id = db.Column(db.Integer, primary_key=True)
-    author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
+    author_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    author = relationship('User', backref='comments')
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
+    post = relationship('Post', backref='comments')
     description = db.Column(db.String(280), nullable=False)
 
     def json(self):

@@ -1,6 +1,7 @@
 from flask import Blueprint
 from flask import request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
+from sqlalchemy.orm import joinedload
 from ..extensions import db, mail
 from ..models import Post, User
 
@@ -10,8 +11,15 @@ post_api = Blueprint('post_api', __name__)
 
 @post_api.route('/feed', methods=['GET'])
 def index():
-    posts = Post.query.all()
-    return jsonify([post.json() for post in posts]), 200
+    posts = Post.query.options(joinedload(Post.comments)).all()
+    return dict(Feed=[dict(c.json(), comments=[i.json() for i in c.comments]) for c in posts]), 200
+
+
+@post_api.route('/feed/<int:id>', methods=['GET'])
+def show_one(id):
+    post = Post.query.get_or_404(id)
+    return post.json(), 200
+
 
 
 @post_api.route('/feed', methods=['POST'])
@@ -22,7 +30,6 @@ def create():
 
     author_id = User.query.filter_by(email=current_user).first()
     description = data.get('description')
-    
     if not description:
         return {'error': 'Dados insuficientes'}, 400
 

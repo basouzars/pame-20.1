@@ -4,6 +4,7 @@ from .config import Config
 from .extensions import db, mail, jwt, migrate
 from .user.controllers import user_api
 from .post.controllers import post_api
+from .comment.controllers import comment_api
 
 
 def create_app():
@@ -17,5 +18,6 @@ def create_app():
 
     app.register_blueprint(user_api)
     app.register_blueprint(post_api)
+    app.register_blueprint(comment_api)
 
     return app
