@@ -11,7 +11,7 @@ post_api = Blueprint('post_api', __name__)
 
 @post_api.route('/feed', methods=['GET'])
 def index():
-    posts = Post.query.options(joinedload(Post.comments)).all()
+    posts = Post.query.options(joinedload(Post.comments)).filter_by(products=[])
     return dict(Feed=[dict(c.json(), comments=[i.json() for i in c.comments]) for c in posts]), 200
 
 

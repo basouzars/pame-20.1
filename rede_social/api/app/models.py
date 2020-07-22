@@ -52,7 +52,7 @@ class Post(db.Model):
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     author = relationship("User", backref=backref("posts", cascade="all, delete"))
     description = db.Column(db.String(280), nullable=False)
-    products = relationship("Product", uselist=False, backref=backref("posts", cascade="all, delete"))
+    products = relationship("Product", uselist=False, backref=backref("product_posts", cascade="all, delete"))
 
     def json(self):
         post__json = {
@@ -67,7 +67,7 @@ class Product(db.Model):
     __tablename__ = 'products'
     id = db.Column(db.Integer, primary_key=True)
     post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
-    post = relationship('Post', backref=backref("products", cascade="all, delete"))
+    post = relationship("Post", backref=backref("post_products", cascade="all, delete"))
     name = db.Column(db.String(30), nullable=False)
     price = db.Column(db.Numeric(10,2), default=0)
     discount = db.Column(db.Numeric(3,2), default=0)
@@ -93,7 +93,7 @@ class Star(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     author = relationship('User', backref=backref("stars", cascade="all, delete"))
-    product_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
+    product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
     product = relationship('Product', backref=backref("stars", cascade="all, delete"))
     amount = db.Column(db.String(1), nullable=False)
 
