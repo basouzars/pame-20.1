@@ -47,7 +47,7 @@ def delete(id):
     current_user = get_jwt_identity()
     post = Post.query.get_or_404(id)
 
-    if post.author_id.email == current_user:
+    if post.author.email == current_user:
         db.session.delete(post)
         db.session.commit()
         return {}, 204

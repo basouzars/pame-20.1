@@ -1,5 +1,5 @@
 from .extensions import db
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 from sqlalchemy.ext.declarative import declarative_base
 
 
@@ -22,8 +22,8 @@ class User(db.Model):
     password_hash = db.Column(db.String(128), nullable=False)
     age = db.Column(db.Integer, default=0)
     activated = db.Column(db.Boolean, default=False)
-    post_likes = relationship("Post", secondary=postlike, backref="users")
-    comment_likes = relationship("Comment", secondary=commentlike, backref="users")
+    post_likes = relationship("Post", secondary=postlike, backref=backref("users", cascade="all, delete"))
+    comment_likes = relationship("Comment", secondary=commentlike, backref=backref("users", cascade="all, delete"))
 
     def json(self):
         user__json = {
@@ -39,9 +39,9 @@ class Post(db.Model):
     __tablename__ = 'posts'
     id = db.Column(db.Integer, primary_key=True)
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    author = relationship("User",backref="posts")
+    author = relationship("User", backref=backref("posts", cascade="all, delete"))
     description = db.Column(db.String(280), nullable=False)
-    products = relationship("Product", uselist=False, backref="posts")
+    products = relationship("Product", uselist=False, backref=backref("posts", cascade="all, delete"))
 
     def json(self):
         post__json = {
@@ -62,9 +62,9 @@ class Comment(db.Model):
     __tablename__ = 'comments'
     id = db.Column(db.Integer, primary_key=True)
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    author = relationship('User', backref='comments')
+    author = relationship('User', backref=backref("comments", cascade="all, delete"))
     post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
-    post = relationship('Post', backref='comments')
+    post = relationship('Post', backref=backref("comments", cascade="all, delete"))
     description = db.Column(db.String(280), nullable=False)
 
     def json(self):
