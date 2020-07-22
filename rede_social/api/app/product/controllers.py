@@ -11,8 +11,8 @@ product_api = Blueprint('product_api', __name__)
 
 @product_api.route('/market', methods=['GET'])
 def index():
-    posts = Post.query.options(joinedload(Post.comments)).filter_by(products=not [])
-    return dict(Market=[dict(c.json(), comments=[i.json() for i in c.comments]) for c in posts]), 200
+    posts = Post.query.options(joinedload(Post.comments)).options(joinedload(Post.products)).filter(Post.products.has())
+    return dict(Market=[dict(c.json(), comments=[i.json() for i in c.comments], product=c.products.json()) for c in posts]), 200
 
 
 @product_api.route('/market/<category>', methods=['GET'])
@@ -24,7 +24,7 @@ def category(category):
 @product_api.route('/market/<int:id>', methods=['GET'])
 def show_one(id):
     product = Post.query.get_or_404(id)
-    return product.json(), 200
+    return product.products.json(), 200
 
 
 @product_api.route('/market', methods=['POST'])
@@ -51,7 +51,7 @@ def create():
     db.session.commit()
 
     
-    return product.json(), 201
+    return {}, 201
 
 
 @product_api.route('/market/<int:id>', methods=['DELETE'])

@@ -70,7 +70,7 @@ class Product(db.Model):
     post = relationship("Post", backref=backref("post_products", cascade="all, delete"))
     name = db.Column(db.String(30), nullable=False)
     price = db.Column(db.Numeric(10,2), default=0)
-    discount = db.Column(db.Numeric(3,2), default=0)
+    discount = db.Column(db.Float, default=0)
     stock = db.Column(db.Integer, default=0)
     sold = db.Column(db.Integer, default=0)
     category = db.Column(db.Enum(CategoryType))
@@ -80,11 +80,11 @@ class Product(db.Model):
             "id": self.id,
             "post_id": self.post_id,
             "name": self.name,
-            "price": self.price,
+            "price": str(self.price),
             "discount": self.discount,
             "stock": self.stock,
             "sold": self.sold,
-            "category": self.category,
+            "category": str(self.category),
         }
         return product__json
 
