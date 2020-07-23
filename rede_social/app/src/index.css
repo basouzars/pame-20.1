@@ -1,10 +1,10 @@
-/* corpo da pagina */
+/* corpo da página */
 body {
   font-family: Helvetica, Arial, sans-serif;
-  background-color: #9D5DA6;
+  background-color: #EAACF2;
 }
 
-/* barra de navegacao */
+/* barra de navegação */
 .nav {
   width: 100%;
 
@@ -14,25 +14,19 @@ body {
   margin: 0 auto;
   margin-bottom:500px;
   position: absolute;
-  /*border-bottom: 1px solid #dbdbdb; /* bordinha de baixo do menu */
+
 
   padding-top: 10px;
   padding-bottom: 25px;
-  background-color: #F2CEF2;
+  background-color: whitesmoke;
 }
 
-/* icone da barra de navegacao */
+/* ícone da barra de navegação */
 .nav a {
   right: 10px;
-  padding-right: 200px;
   text-decoration: none;
   font-size: 17px;
   color: #E0C4F2;
-}
-
-/* usuario na barra de navegacao */
-.usuario {
-  fill: #E0C4F2;
 }
 
 .logo {
@@ -55,13 +49,14 @@ body {
   border: none;
 }
 
-/* os icones a direita da barra de navegaçao */
+/* os ícones à direita da barra de navegação */
 .nav-direita {
   float: right;
+  margin-right: 200px;
 }
 
 
-/* container que guarda os icones */
+/* container que guarda os ícones */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -80,15 +75,15 @@ body {
   color : #000;
 }
 
-/* os icones de compra */
+/* os ícones de compra */
 .container div {
-  background-color: #EAACF2;
+  background-color: whitesmoke;
   margin: 25px;
   padding: 50px;
 }
 
 .container div:hover {
-  background-color: #8850BF;
+  background-color: #8850BF
 }
 
 .container div p {
@@ -102,54 +97,75 @@ body {
 
 
 /* os posts de venda */
-.postagem {
-  width: 615px;
-  margin: auto;
+.container-post {
+  display: flex;
+  background-color: whitesmoke;
+  width: 800px;
+  margin: 0 auto;
   margin-top: 100px;
-
-  border-radius: 3px;
-  border: 1px solid #dbdbdb;
-  background: #fff;
 }
 
-/* imagem da postagem */
-.postagem img {
-  width: 615px;
-  height: 615px;
+.container-post img {
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+  padding-right: 15px;
 }
 
-/* infos do post que ficam de baixo da foto */
-.info-post {
-  /*padding-top: 20px;*/
-  padding-bottom: 20px;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.info-post img {
-  width: 22px;
-  height: 22px;
-  padding-right: 10px;
-}
-
-/* a caixa de texto do comentario */
-.info-post input {
-  width: 500px;
-  height: 55px;
-  border: none;
-}
-
-/* botao de enviar comentario */
-.info-post button {
-  width: 50px;
-  height: 55px;
-  border: none;
-  color: rgb(3, 150, 246);
-}
-
-/* links do post */
-.info-post a {
+.nome-item {
   font-weight: bold;
-  text-decoration: none;
-  color: black;
+}
+
+.info {
+  width: 40%;
+}
+
+.preco {
+  font-weight: bold;
+  font-size: 24px;
+  color: rgb(100, 0, 255);
+}
+
+.compra {
+  flex-grow: 20;
+  position: relative;
+  display: block;
+  padding-left: 10px;
+}
+
+.compra img {
+  width: 47px;
+  height: 47px;
+  padding-top: 20px;
+}
+
+.user-info-container {
+  display: flex;
+}
+
+.compra button {
+  margin-right: 5px;
+  border: none;
+  width: 100px;
+  height: 30px;
+}
+
+.nome-vendedor {
+  font-weight: bold;
+}
+
+.botoes-compra {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.botao-msg {
+  background-color: rgb(50, 200, 75);
+  color: #fff;
+}
+
+.botao-comp {
+  background-color: rgb(200, 5, 80);
+  color: #fff;
 }
