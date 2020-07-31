@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+flask = "*"
+flask-sqlalchemy = "*"
+bcrypt = "*"
+flask-mail = "*"
+flask-jwt-extended = "*"
+flask-migrate = "*"
+flask-script = "*"
+
+[requires]
+python_version = "3.7"
