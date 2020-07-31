@@ -1,23 +1,33 @@
 import React from 'react';
-// icones
-import icoracao from './img/coracao.svg';
-import icomente from './img/comente.svg';
-import iorigami from './img/origami.svg';
 
 function Post(props) {
     return (
-    <div className="postagem">
-        <img src={props.imagem}/>
+    <div key={props.chave} className="container-post">
+        <div>
+            <img src={props.imagem} alt=""/>
+        </div>
+        <div className="info">
+            <p className="nome-item">{props.nome_item}</p>
+            <p>{props.descricao}</p>
+            <p className="preco">R$ {props.preco}</p>
+        </div>
 
-        <div class="info-post">
-            {/*icones*/}
-            <p>
-                <img src={icoracao}/>
-                <img src={icomente}/>
-                <img src={iorigami}/>
-            </p>
-            <p><a href="#">{props.nome_usuario} </a>{props.descricao}</p>
-            <p><input type="text" placeholder="Adicionar um comentário..."/><button type="button">Enviar</button></p>
+
+
+        <div className="compra">
+            <div className="user-info-container">
+                <div>
+                    <img src={props.foto_vendedor} alt=""/>
+                </div>
+                <div>
+                    <p className="nome-vendedor">{props.vendedor}</p>
+                    <p>{props.local}</p>
+                </div>
+            </div>
+            <div className="botoes-compra">
+                <button className="botao-msg" type="button">Mensagem</button>
+                <button className="botao-comp" type="button">Comprar</button>
+            </div>
         </div>
     </div>
     );
